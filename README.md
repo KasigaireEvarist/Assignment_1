@@ -1,7 +1,7 @@
 # Arrays(c language)
 animal arrayand average marks
-![average marks source code](https://raw.githubusercontent.com/KasigaireEvarist/Assignment_1/refs/heads/main/IMG-20250305-WA0001.jpg?raw=true)
-![average marks output](https://raw.githubusercontent.com/KasigaireEvarist/Assignment_1/refs/heads/main/IMG-20250305-WA0002.jpg?raw=true)
+![average marks source code]()
+![average marks output]()
 ![animal arrays source code](https://raw.githubusercontent.com/KasigaireEvarist/Assignment_1/refs/heads/main/IMG-20250305-WA0003.jpg?raw=true)
 ![animal arrays output](https://raw.githubusercontent.com/KasigaireEvarist/Assignment_1/refs/heads/main/IMG-20250305-WA0004.jpg?raw=true)
 
