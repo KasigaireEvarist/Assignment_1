@@ -1,58 +1,83 @@
 #include <stdio.h>
 #include <stdlib.h>
+char* exams[4]={"Assessment","Coursework","Midterm","End Of term"};
 
-double ass, coursework, midterm, endofterm;
+double GetAvg_math(){
 
-double math(){
-    printf("\t Math \n");
-    printf("Enter marks got the Math Assignment: ");
-    scanf("%lf",&ass);
-    printf("Enter marks got the Math course work: ");
-    scanf("%lf",&coursework);
-    printf("Enter marks got the Math midterm: ");
-    scanf("%lf",&midterm);
-    printf("Enter marks got the Math end of term: ");
-    scanf("%lf",&endofterm);
+    double math[4];
+    double sum=0;
 
-    return (ass+coursework+midterm+endofterm)/4;
+    printf("Enter Math results:\n");
+    for(int i=0; i<4; i++){
+        while(1){
+        printf("%s:",exams[i]);
+        scanf("%lf",&math[i]);
+            if(math[i]>=0 &&math[i]<=100){
+                break;
+            }else{
+            printf("Entered Invalid Input.\n");
+            }
+        }
+    }
+    for(int i=0; i<4; i++){
+        sum=sum+math[i];
+    }
+    return sum/4;
 }
-double chem(){
-    printf("\t Chemistry \n");
-    printf("Enter marks got the Chemistry Assignment: ");
-    scanf("%lf",&ass);
-    printf("Enter marks got the Chemistry course work: ");
-    scanf("%lf",&coursework);
-    printf("Enter marks got the Chemistry midterm: ");
-    scanf("%lf",&midterm);
-    printf("Enter marks got the Chemistry end of term: ");
-    scanf("%lf",&endofterm);
-
-    return (ass+coursework+midterm+endofterm)/4;
+double GetAvg_phy(){
+    double phy[4];
+    double sum=0;
+    printf("Enter Physics results:\n");
+    for(int i=0; i<4; i++){
+        while(1){
+        printf("%s:",exams[i]);
+        scanf("%lf",&phy[i]);
+            if(phy[i]>=0 &&phy[i]<=100){
+                break;
+            }else{
+            printf("Entered Invalid Input.\n");
+            }
+        }
+    }
+    for(int i=0; i<4; i++){
+        sum=sum+phy[i];
+    }
+    return sum/4;
 }
-double phy(){
-    printf("\t Physics \n");
-    printf("Enter marks got the Physics Assignment: ");
-    scanf("%d",&ass);
-    printf("Enter marks got the Physics course work: ");
-    scanf("%d",&coursework);
-    printf("Enter marks got the Physics midterm: ");
-    scanf("%d",&midterm);
-    printf("Enter marks got the Physics end of term: ");
-    scanf("%d",&endofterm);
-
-    return (ass+coursework+midterm+endofterm)/4;
+double GetAvg_chem(){
+    double chem[4];
+    double sum=0;
+    printf("Enter Math results:\n");
+    for(int i=0; i<4; i++){
+        while(1){
+        printf("%s: ",exams[i]);
+        scanf("%lf",&chem[i]);
+            if(chem[i]>=0 &&chem[i]<=100){
+                break;
+            }else{
+            printf("Entered Invalid Input.\n");
+            }
+        }
+    }
+    for(int i=0; i<4; i++){
+        sum=sum+chem[i];
+    }
+    return sum/4;
 }
 
 int main()
 {
-    double mathavg = math();
-    printf("Average mark is %.1lf\n===============================================\n",mathavg);
-    double phyavg = phy();
-    printf("Average mark is %.1lf\n===============================================\n",phyavg);
-    double chemavg = chem();
-    printf("Average mark is %.1lf\n===============================================\n",chemavg);
-    double overallAverage = (phyavg+mathavg+chemavg)/3;
-    printf("The overall average in all subjects is %.2lf",overallAverage);
+    double avg_math = GetAvg_math();
+    printf("\nMath avg: %.1lf%\n===============================\n",avg_math);
+
+    double avg_phy = GetAvg_phy();
+    printf("\nPhysics avg: %.1lf%\n===============================\n",avg_phy);
+
+    double avg_chem = GetAvg_chem();
+    printf("\nChemistry avg: %.1lf%\n===============================\n",avg_chem);
+
+    double overall_avg = (avg_math+avg_phy+avg_chem)/3;
+    printf("\nThe overall average: %.2lf%\n===============================\n",overall_avg);
 
     return 0;
 }
