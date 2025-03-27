@@ -5,14 +5,17 @@ char* exams[4]={"Assessment","Coursework","Midterm","End Of term"};
 double GetAvg_math(){
 
     double math[4];
-    double sum=0;
+    double sum1=0;
 
     printf("Enter Math results:\n");
     for(int i=0; i<4; i++){
         while(1){
         printf("%s:",exams[i]);
-        scanf("%lf",&math[i]);
-            if(math[i]>=0 &&math[i]<=100){
+
+        if(!scanf("%lf",&math[i])){
+            scanf("%*[^\n]");
+            printf("Invalid input\n");
+        }else if( math[i]>=0 &&math[i]<=100){
                 break;
             }else{
             printf("Entered Invalid Input.\n");
@@ -20,19 +23,21 @@ double GetAvg_math(){
         }
     }
     for(int i=0; i<4; i++){
-        sum=sum+math[i];
+        sum1=sum1+math[i];
     }
-    return sum/4;
+    return sum1/4;
 }
 double GetAvg_phy(){
     double phy[4];
-    double sum=0;
+    double sum2=0;
     printf("Enter Physics results:\n");
     for(int i=0; i<4; i++){
         while(1){
         printf("%s:",exams[i]);
-        scanf("%lf",&phy[i]);
-            if(phy[i]>=0 &&phy[i]<=100){
+        if(!scanf("%lf",&phy[i])){
+            scanf("%*[^\n]");
+            printf("Invalid input\n");
+        }else if(phy[i]>=0 &&phy[i]<=100){
                 break;
             }else{
             printf("Entered Invalid Input.\n");
@@ -40,19 +45,21 @@ double GetAvg_phy(){
         }
     }
     for(int i=0; i<4; i++){
-        sum=sum+phy[i];
+        sum2=sum2+phy[i];
     }
-    return sum/4;
+    return sum2/4;
 }
 double GetAvg_chem(){
     double chem[4];
-    double sum=0;
-    printf("Enter Math results:\n");
+    double sum3=0;
+    printf("Enter Chem results:\n");
     for(int i=0; i<4; i++){
         while(1){
         printf("%s: ",exams[i]);
-        scanf("%lf",&chem[i]);
-            if(chem[i]>=0 &&chem[i]<=100){
+        if(!scanf("%lf",&chem[i])){
+            scanf("%*[^\n]");
+            printf("Invalid input\n");
+        }else if(chem[i]>=0 &&chem[i]<=100){
                 break;
             }else{
             printf("Entered Invalid Input.\n");
@@ -60,9 +67,9 @@ double GetAvg_chem(){
         }
     }
     for(int i=0; i<4; i++){
-        sum=sum+chem[i];
+        sum3=sum3+chem[i];
     }
-    return sum/4;
+    return sum3/4;
 }
 
 int main()
